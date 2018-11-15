@@ -33,13 +33,17 @@ node {
         withMaven(maven:'Maven test'){
            sh 'mvn test' 
         }  
-        junit '**/target/*.xml'
+        //junit '**/target/*.xml'
         /*echo 'Testing...'   
         sh 'mvn test'*/
     }    
     stage('Deploy'){
-        echo 'Deploying...'
-        sh 'mvn package'
+        withMaven(maven:'Maven test'){
+           sh 'mvn package' 
+        }  
+        
+        /*echo 'Deploying...'
+        sh 'mvn package'*/
     }
 }
 
