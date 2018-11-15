@@ -23,7 +23,7 @@
 node {
     checkout scm
     stage('Build'){
-        withmaven(maven:'Maven test'){
+        withMaven(maven:'Maven test'){
            sh 'mvn compile' 
         }  
         /*echo 'Building...'
