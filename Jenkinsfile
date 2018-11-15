@@ -27,9 +27,11 @@ node {
     }
     stage('Test'){
         echo 'Testing...'   
+        sh 'mvn test'
     }    
     stage('Deploy'){
         echo 'Deploying...'
+        sh 'mvn package'
     }
 }
 
