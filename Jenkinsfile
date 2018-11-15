@@ -23,12 +23,17 @@
 node {
     checkout scm
     stage('Build'){
-        echo 'Building...'
-        sh 'mvn compile'
+        withmaven(maven:'Maven test'){
+           sh 'mvn compile' 
+        }  
+        /*echo 'Building...'
+        sh 'mvn compile'*/
     }
     stage('Test'){
-        echo 'Testing...'   
         sh 'mvn test'
+        junit '**/target/*.xml'
+        /*echo 'Testing...'   
+        sh 'mvn test'*/
     }    
     stage('Deploy'){
         echo 'Deploying...'
