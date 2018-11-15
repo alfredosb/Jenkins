@@ -30,7 +30,9 @@ node {
         sh 'mvn compile'*/
     }
     stage('Test'){
-        sh 'mvn test'
+        withMaven(maven:'Maven test'){
+           sh 'mvn test' 
+        }  
         junit '**/target/*.xml'
         /*echo 'Testing...'   
         sh 'mvn test'*/
