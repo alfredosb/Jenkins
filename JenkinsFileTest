@@ -7,7 +7,7 @@ node('master') {
                 sh 'mvn package'
             }
             
-            sh 'cp /var/lib/jenkins/workspace/PipelineHelloWorld/target/*.war /var/lib/tomcat8/webapps/'
+            sh 'cp ./PipelineHelloWorld/target/*.war /var/lib/tomcat8/webapps/'
         }
         echo 'Se ejecuta si exito'
     } catch (e) {
