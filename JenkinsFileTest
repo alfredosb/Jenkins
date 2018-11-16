@@ -1,4 +1,4 @@
-node('Jenkins') {
+node('master') {
     try {
         stage('Test') {
             git 'https://github.com/efsavage/hello-world-war'
