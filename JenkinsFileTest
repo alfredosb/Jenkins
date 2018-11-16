@@ -25,5 +25,7 @@ node('master') {
         }
 
         echo 'Se ejecuta siempre'
+        
+        emailext body: '', subject: 'Prueba con pipelines', to: 'alfbogajo@gmail.com'
     }
 }
