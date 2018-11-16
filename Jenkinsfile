@@ -33,8 +33,8 @@ node {
         withMaven(maven:'Maven test'){
            sh 'mvn test' 
         }  
-        junit '**/target/*.xml'
-        /*echo 'Testing...'   
+        /*junit '**/target/*.xml'
+        echo 'Testing...'   
         sh 'mvn test'*/
     }    
     stage('Deploy'){
