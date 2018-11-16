@@ -20,7 +20,7 @@
     }
 }*/
 
-/*node {
+node {
     checkout scm
     stage('Build'){
         withMaven(maven:'Maven test'){
@@ -29,25 +29,28 @@
         /*echo 'Building...'
         sh 'mvn compile'*/
     }
-    /*stage('Test'){
+    stage('Test'){
         withMaven(maven:'Maven test'){
            sh 'mvn test' 
         }  */
         //junit '**/target/*.xml'
         /*echo 'Testing...'   
         sh 'mvn test'*/
-   /* }    
+    }    
     stage('Deploy'){
         withMaven(maven:'Maven test'){
            sh 'mvn package' 
-        }  */
+        }  
+        
+        git add target
+        git commit -am 'OK'
         
         /*echo 'Deploying...'
         sh 'mvn package'*/
-   //}
-/*}*/
+   }
+}
 
-node {
+/*node {
     try {
         stage('Test') {
             sh 'echo "Fallo!"; exit 1'
@@ -69,6 +72,6 @@ node {
 
         echo 'Se ejecuta siempre'
     }
-}
+}*/
 
 
