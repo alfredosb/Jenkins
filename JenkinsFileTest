@@ -7,7 +7,7 @@ node('Jenkins') {
                 sh 'mvn package'
             }
             
-            sh 'cp 	PipelineHelloWorld/target/*.war TOMCAT_DIRECTORY/webapps/'
+            sh 'cp PipelineHelloWorld/target/*.war TOMCAT_DIRECTORY/webapps/'
         }
         echo 'Se ejecuta si exito'
     } catch (e) {
