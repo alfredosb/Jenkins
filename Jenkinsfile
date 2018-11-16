@@ -29,23 +29,23 @@
         /*echo 'Building...'
         sh 'mvn compile'*/
     }
-    stage('Test'){
+    /*stage('Test'){
         withMaven(maven:'Maven test'){
            sh 'mvn test' 
-        }  
+        }  */
         //junit '**/target/*.xml'
         /*echo 'Testing...'   
         sh 'mvn test'*/
-    }    
+   /* }    
     stage('Deploy'){
         withMaven(maven:'Maven test'){
            sh 'mvn package' 
-        }  
+        }  */
         
         /*echo 'Deploying...'
         sh 'mvn package'*/
-    }
-}*/
+   //}
+/*}*/
 
 node {
     try {
